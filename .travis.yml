@@ -25,8 +25,7 @@ script:
   - $SH "ls"
   - $SH "mkdir ros4hri && cd ros4hri"
   - $SH "git clone https://github.com/ros4hri/hri_msgs.git"
-  - $SH "cd hri_msgs && mkdir build && cd build"
-  - $SH "cmake .. && make"
+  - $SH "cd hri_msgs && mkdir build && cd build && cmake .. && make"
 
 notifications:
     email: false
