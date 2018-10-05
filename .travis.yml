@@ -1,0 +1,31 @@
+sudo: required
+
+services:
+  - docker
+
+env: SH="docker exec -t ubuntu-test bash -c"
+
+before_install:
+  - docker run -d --name ubuntu-test -e LC_ALL="en_US.UTF-8" -e LANG="en_US.UTF-8" -v $(pwd):/travis -w /travis ubuntu:latest tail -f /dev/null
+  - docker ps
+
+install:
+  - $SH "apt-get update"
+  - $SH "apt-get install -y locales curl gnupg"
+  - $SH "locale-gen en_US.UTF-8"
+  - $SH "curl http://repo.ros2.org/repos.key > ros2key"
+  - $SH "apt-key add ros2key"
+  - $SH "sh -c 'echo \"deb [arch=amd64,arm64] http://repo.ros2.org/ubuntu/main `lsb_release -cs` main\" > /etc/apt/sources.list.d/ros2-latest.list'"
+  - $SH "apt update && apt install ros-bouncy-ros-base"
+
+script:
+  - $SH "source /opt/ros/bouncy/setup.bash"
+  - $SH "ros2 topic"
+  - $SH "ls"
+  - $SH "mkdir ros4hri && cd ros4hri"
+  - $SH "git clone https://github.com/ros4hri/hri_msgs.git"
+  - $SH "cd hri_msgs && mkdir build && cd build"
+  - $SH "cmake .. && make"
+
+notifications:
+    email: false
