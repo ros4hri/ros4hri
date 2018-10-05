@@ -1,5 +1,8 @@
 #! /usr/bin/sh
 
+set -e # enable error checking -> while return on first error
+set -o errexit
+
 INSTALL_PREFIX=$HOME/ros4hri-dev
 
 mkdir -p $INSTALL_PREFIX
@@ -20,3 +23,7 @@ make install
 
 cd ../..
 done
+
+### 2. Test pipeline
+
+echo "%%%%%%%%%%%%%%%%%%%%%%% TESTING PIPELINE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
