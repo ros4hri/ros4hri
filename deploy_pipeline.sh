@@ -12,11 +12,8 @@ do
 
 echo "%%%%%%%%%%%%%%%%%%%%%%% INSTALLING $PKG_NAME %%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 
-arr=(${PKG_NAME//_/ })
-printf -v PKG_CAMELCASE %s "${arr[@]^}"
-
 git clone https://github.com/ros4hri/$PKG_NAME.git
-mkdir build && cd build
+cd $PKG_NAME && mkdir build && cd build
 cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREFIX=$ROS_DEV -DFastRTPS_INCLUDE_DIR=/opt/ros/bouncy/include/fastrtps -DFastRTPS_LIBRARY_RELEASE=/opt/ros/bouncy/lib/fastrtps ..
 make
 make install
