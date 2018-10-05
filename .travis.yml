@@ -18,6 +18,7 @@ install:
   - $SH "sh -c 'echo \"deb [arch=amd64,arm64] http://repo.ros2.org/ubuntu/main bionic main\" > /etc/apt/sources.list.d/ros2-latest.list'"
   - $SH "apt update"
   - $SH "DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true apt install -y ros-bouncy-ros-base"
+  - $SH "DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true apt install -y ros-bouncy-ament-cmake-*"
   - $SH "echo 'source /opt/ros/bouncy/setup.bash' >> ~/.bashrc"
 
 script:
