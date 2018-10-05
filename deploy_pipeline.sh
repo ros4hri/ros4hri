@@ -2,7 +2,7 @@
 
 INSTALL_PREFIX=$HOME/ros4hri-dev
 
-mkdir -P $INSTALL_PREFIX
+mkdir -p $INSTALL_PREFIX
 
 cd ros4hri
 
