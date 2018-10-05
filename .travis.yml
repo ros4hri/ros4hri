@@ -16,10 +16,11 @@ install:
   - $SH "curl http://repo.ros2.org/repos.key > ros2key"
   - $SH "apt-key add ros2key"
   - $SH "sh -c 'echo \"deb [arch=amd64,arm64] http://repo.ros2.org/ubuntu/main bionic main\" > /etc/apt/sources.list.d/ros2-latest.list'"
-  - $SH "apt update && apt install -y ros-bouncy-ros-base"
+  - $SH "apt update"
+  - $SH "DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true apt install -y ros-bouncy-ros-base"
+  - $SH "echo 'source /opt/ros/bouncy/setup.bash' >> ~/.bashrc"
 
 script:
-  - $SH "source /opt/ros/bouncy/setup.bash"
   - $SH "ros2 topic"
   - $SH "ls"
   - $SH "mkdir ros4hri && cd ros4hri"
