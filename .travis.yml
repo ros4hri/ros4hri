@@ -11,7 +11,7 @@ before_install:
 
 install:
   - $SH "apt-get update"
-  - $SH "apt-get install -y locales curl gnupg"
+  - $SH "apt-get install -y locales curl gnupg git cmake g++"
   - $SH "locale-gen en_US.UTF-8"
   - $SH "curl http://repo.ros2.org/repos.key > ros2key"
   - $SH "apt-key add ros2key"
