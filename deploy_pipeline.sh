@@ -3,7 +3,7 @@
 set -e # enable error checking -> while return on first error
 set -o errexit
 
-INSTALL_PREFIX=$HOME/ros4hri-dev
+INSTALL_PREFIX=`pwd`/ros4hri-dev
 
 mkdir -p $INSTALL_PREFIX
 
