@@ -22,6 +22,7 @@ install:
   - $SH "echo 'source /opt/ros/bouncy/setup.bash' >> ~/.bashrc"
 
 script:
+  - $SH "cat $HOME/.bashrc"
   - $SH "ros2 topic"
   - $SH "ls"
   - $SH "mkdir ros4hri && cd ros4hri"
