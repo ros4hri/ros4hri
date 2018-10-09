@@ -13,18 +13,14 @@ install:
   - $SH "apt-get update"
   - $SH "apt-get install -y locales curl gnupg git cmake g++"
   - $SH "locale-gen en_US.UTF-8"
-  - $SH "curl http://repo.ros2.org/repos.key > ros2key"
-  - $SH "apt-key add ros2key"
-  - $SH "sh -c 'echo \"deb [arch=amd64,arm64] http://repo.ros2.org/ubuntu/main bionic main\" > /etc/apt/sources.list.d/ros2-latest.list'"
+  - $SH "apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116"
+  - $SH "sh -c 'echo \"deb [arch=amd64,arm64] http://packages.ros.org/ros/ubuntu bionic main\" > /etc/apt/sources.list.d/ros-latest.list'"
   - $SH "apt update"
-  - $SH "DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true apt install -y ros-bouncy-ros-base"
+  - $SH "DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true apt install -y ros-melodic-ros-base"
 
 script:
-  - $SH "source /opt/ros/bouncy/setup.bash && ros2 topic"
-  - $SH "ls"
-  - $SH "mkdir ros4hri-dev"
-  - $SH "mkdir ros4hri"
-  - $SH "source /opt/ros/bouncy/setup.bash && sh deploy_pipeline.sh"
+  - $SH "source /opt/ros/melodic/setup.bash && rostopic"
+  - $SH "source /opt/ros/melodic/setup.bash && sh deploy_pipeline.sh"
 
 notifications:
     email: false

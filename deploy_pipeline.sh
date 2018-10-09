@@ -25,10 +25,10 @@ echo "%%%%%%%%%%%%%%%%%%%%%%% INSTALLING $PKG_NAME %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 git clone https://github.com/ros4hri/$PKG_NAME.git
 cd $PKG_NAME && mkdir build && cd build
-cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX -DFastRTPS_INCLUDE_DIR=/opt/ros/bouncy/include/fastrtps -DFastRTPS_LIBRARY_RELEASE=/opt/ros/bouncy/lib/fastrtps ..
+cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX ..
 make
 make install
-#source $INSTALL_PREFIX/share/
+source $INSTALL_PREFIX/setup.sh
 cd ../..
 done
 
