@@ -20,7 +20,7 @@ install:
 
 script:
   - $SH "source /opt/ros/melodic/setup.bash && rostopic"
-  - $SH "source /opt/ros/melodic/setup.bash && sh deploy_pipeline.sh"
+  - $SH "source /opt/ros/melodic/setup.bash && bash deploy_pipeline.sh"
 
 notifications:
     email: false

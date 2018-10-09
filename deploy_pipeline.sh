@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 set -e # enable error checking -> while return on first error
 set -o errexit
@@ -28,8 +28,8 @@ cd $PKG_NAME && mkdir build && cd build
 cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX ..
 make
 make install
-source $INSTALL_PREFIX/setup.sh
 cd ../..
+source $INSTALL_PREFIX/setup.sh
 done
 
 ### 2. Test pipeline
