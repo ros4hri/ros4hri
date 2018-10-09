@@ -1,13 +1,21 @@
-#! /usr/bin/sh
+#! /bin/sh
 
 set -e # enable error checking -> while return on first error
 set -o errexit
 
 INSTALL_PREFIX=`pwd`/ros4hri-dev
 
+if [ -d "$INSTALL_PREFIX" ]; then
+    rm -rf $INSTALL_PREFIX
+fi
+
 mkdir -p $INSTALL_PREFIX
 
-cd ros4hri
+if [ -d "tmp-dev" ]; then
+    rm -rf tmp-dev
+fi
+
+mkdir -p tmp-dev && cd tmp-dev
 
 ### 1. Clone & compile nodes
 for PKG_NAME in hri_msgs face_detection face_recognition skeleton_tracker;
@@ -20,7 +28,7 @@ cd $PKG_NAME && mkdir build && cd build
 cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX -DFastRTPS_INCLUDE_DIR=/opt/ros/bouncy/include/fastrtps -DFastRTPS_LIBRARY_RELEASE=/opt/ros/bouncy/lib/fastrtps ..
 make
 make install
-
+#source $INSTALL_PREFIX/share/
 cd ../..
 done
 
