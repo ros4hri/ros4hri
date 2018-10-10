@@ -19,7 +19,6 @@ install:
   - $SH "DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true apt install -y ros-melodic-ros-base"
 
 script:
-  - $SH "source /opt/ros/melodic/setup.bash && rostopic"
   - $SH "source /opt/ros/melodic/setup.bash && bash deploy_pipeline.sh"
 
 notifications:
