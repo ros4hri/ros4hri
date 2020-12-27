@@ -5,10 +5,10 @@ ROS4HRI master repository
 
 This repository contains the documents and proposals for the *ROS for HRI*
 project. To contribute, **[please head to the
-wiki](https://caidin.brl.ac.uk/ROS4HRI/main/wikis/home)**.
+wiki](https://github.com/ros4hri/ros4hri/wiki)**.
 
 The reference implementations of the ROS for HRI interfaces (ie, ROS messages)
-can be found in [the hri_msgs sister repository](https://caidin.brl.ac.uk/ROS4HRI/hri_msgs).
+can be found in [the hri_msgs sister repository](https://github.com/ros4hri/hri_msgs).
 
 Installation
 ------------
@@ -116,17 +116,17 @@ Contains all the custom HRI messages required by the other nodes.
 You can clone it here:
 
 ```
-$ git clone https://git.brl.ac.uk/ROS4HRI/hri_msgs.git
+$ git clone https://github.com/ros4hri/hri_msgs.git
 ```
 
 and install it as any standard ROS package.
 
-See [`hri_msgs` documentation](https://git.brl.ac.uk/ROS4HRI/hri_msgs/blob/master/README.md#installation) for details if needed.
+See [`hri_msgs` documentation](https://github.com/ros4hri/hri_msgs/blob/master/README.md#installation) for details if needed.
 
 ### hri_skeletons
 
 
-See the [hri_skeletons documentation](https://git.brl.ac.uk/ROS4HRI/hri_skeletons).
+See the [hri_skeletons documentation](https://github.com/ros4hri/hri_skeletons).
 
 
 Sensors
