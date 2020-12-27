@@ -3,12 +3,29 @@ ROS4HRI project
 
 [![Build Status](https://travis-ci.com/ros4hri/ros4hri.svg?branch=master)](https://travis-ci.com/ros4hri/ros4hri)
 
-This repository contains the documents and proposals for the *ROS for HRI*
-project. To contribute, **[please head to the
-wiki](https://github.com/ros4hri/ros4hri/wiki)**.
+![RViz screenshot](doc/rviz-screenshot.jpg)
 
-The reference implementations of the ROS for HRI interfaces (ie, ROS messages)
-can be found in [the hri_msgs sister repository](https://github.com/ros4hri/hri_msgs).
+This repository is the main entry point to the ROS4HRI framework. ROS4HRI is a
+set of [ROS](https://www.ros.org) messages and nodes to facilitate building
+interactive robots, while supporting code sharing and replicability amongst the
+community.
+
+**In order to understand how humans are represented and can be accessed, we
+highly recommend you to have a look at the paper presenting ROS4HRI framework.**
+
+The ROS4HRI platform is currently made of:
+
+- [the hri_msgs package](https://github.com/ros4hri/hri_msgs): the reference
+  implementation of the ROS for HRI interfaces (ie, ROS messages)
+- [hri_skeletons](https://github.com/ros4hri/hri_skeletons): a suite of nodes to
+  track and represent bodies
+- [hri_faces](https://github.com/ros4hri/hri_faces): a suite of nodes to
+  track and extract facial features
+- [hri_matcher](https://github.com/ros4hri/hri_matcher): a node identifying and
+  maintaining matchs between skeletons and faces.
+
+Additional resources and background design is available on the
+[wiki](https://github.com/ros4hri/ros4hri/wiki).
 
 Installation
 ------------
